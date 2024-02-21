@@ -1,0 +1,5 @@
+name: 'React example block'
+type: module
+description: 'Example module with a React application'
+package: Custom
+core_version_requirement: ^10
