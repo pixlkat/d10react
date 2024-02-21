@@ -41,3 +41,5 @@ node_modules/
 /web/core/modules/
 /web/.editorconfig
 
+# backup directory
+/backups
