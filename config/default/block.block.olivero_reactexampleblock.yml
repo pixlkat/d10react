@@ -1,0 +1,20 @@
+uuid: b73c2903-bc4a-47e7-9f6b-587b41e65480
+langcode: en
+status: true
+dependencies:
+  module:
+    - react_example_block
+  theme:
+    - olivero
+id: olivero_reactexampleblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: react_example_block
+settings:
+  id: react_example_block
+  label: 'React example block'
+  label_display: visible
+  provider: react_example_block
+visibility: {  }
