@@ -1,0 +1,59 @@
+uuid: c2eb8a78-0bea-4bca-bbe3-6f6c06d9120d
+langcode: en
+status: true
+dependencies:
+  config:
+    - shortcut.set.default
+id: shortcut--default
+disabled: true
+path: shortcut/default
+resourceType: shortcut--default
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  shortcut_set:
+    disabled: false
+    fieldName: shortcut_set
+    publicName: shortcut_set
+    enhancer:
+      id: ''
+  title:
+    disabled: false
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  weight:
+    disabled: false
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+  link:
+    disabled: false
+    fieldName: link
+    publicName: link
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''

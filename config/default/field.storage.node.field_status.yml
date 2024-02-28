@@ -1,0 +1,27 @@
+uuid: 31e47923-e045-43e1-b45f-332abae85177
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_status
+field_name: field_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: active
+      label: 'Active Member'
+    -
+      value: inactive
+      label: 'Inactive Member'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

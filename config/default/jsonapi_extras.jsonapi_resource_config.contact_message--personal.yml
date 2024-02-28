@@ -1,0 +1,65 @@
+uuid: e416aaf2-acb9-4631-96e8-1551d7ae7c07
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.personal
+id: contact_message--personal
+disabled: true
+path: contact_message/personal
+resourceType: contact_message--personal
+resourceFields:
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  contact_form:
+    disabled: false
+    fieldName: contact_form
+    publicName: contact_form
+    enhancer:
+      id: ''
+  name:
+    disabled: false
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  mail:
+    disabled: false
+    fieldName: mail
+    publicName: mail
+    enhancer:
+      id: ''
+  subject:
+    disabled: false
+    fieldName: subject
+    publicName: subject
+    enhancer:
+      id: ''
+  message:
+    disabled: false
+    fieldName: message
+    publicName: message
+    enhancer:
+      id: ''
+  copy:
+    disabled: false
+    fieldName: copy
+    publicName: copy
+    enhancer:
+      id: ''
+  recipient:
+    disabled: false
+    fieldName: recipient
+    publicName: recipient
+    enhancer:
+      id: ''

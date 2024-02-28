@@ -1,0 +1,21 @@
+uuid: 01587d0a-e2ed-4521-8dcd-265b84641839
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sector
+    - node.type.member
+  module:
+    - options
+id: node.member.field_sector
+field_name: field_sector
+entity_type: node
+bundle: member
+label: Sector
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

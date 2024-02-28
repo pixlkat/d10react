@@ -1,0 +1,62 @@
+uuid: 50dbc582-0e05-4617-8262-bd8d0293fee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.member.field_first_name
+    - field.field.node.member.field_last_name
+    - field.field.node.member.field_sector
+    - field.field.node.member.field_status
+    - field.field.node.member.field_type
+    - node.type.member
+  module:
+    - options
+    - user
+id: node.member.default
+targetEntityType: node
+bundle: member
+mode: default
+content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sector:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

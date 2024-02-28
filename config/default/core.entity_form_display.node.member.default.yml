@@ -1,0 +1,64 @@
+uuid: 69897f2d-0cac-4b4c-b692-b56840eb1cb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.member.field_first_name
+    - field.field.node.member.field_last_name
+    - field.field.node.member.field_sector
+    - field.field.node.member.field_status
+    - field.field.node.member.field_type
+    - node.type.member
+id: node.member.default
+targetEntityType: node
+bundle: member
+mode: default
+content:
+  field_first_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sector:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_status:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  title: true
+  uid: true

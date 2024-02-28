@@ -1,0 +1,119 @@
+uuid: 75831159-d7d6-4ca9-a6cb-1edffde08b7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - field
+id: field_storage_config--field_storage_config
+disabled: false
+path: field_storage_config/field_storage_config
+resourceType: field_storage_config--field_storage_config
+resourceFields:
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  dependencies:
+    disabled: false
+    fieldName: dependencies
+    publicName: dependencies
+    enhancer:
+      id: ''
+  third_party_settings:
+    disabled: false
+    fieldName: third_party_settings
+    publicName: third_party_settings
+    enhancer:
+      id: ''
+  _core:
+    disabled: false
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  field_name:
+    disabled: false
+    fieldName: field_name
+    publicName: field_name
+    enhancer:
+      id: ''
+  entity_type:
+    disabled: false
+    fieldName: entity_type
+    publicName: entity_type
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  settings:
+    disabled: false
+    fieldName: settings
+    publicName: settings
+    enhancer:
+      id: ''
+  module:
+    disabled: true
+    fieldName: module
+    publicName: module
+    enhancer:
+      id: ''
+  locked:
+    disabled: true
+    fieldName: locked
+    publicName: locked
+    enhancer:
+      id: ''
+  cardinality:
+    disabled: true
+    fieldName: cardinality
+    publicName: cardinality
+    enhancer:
+      id: ''
+  translatable:
+    disabled: true
+    fieldName: translatable
+    publicName: translatable
+    enhancer:
+      id: ''
+  indexes:
+    disabled: true
+    fieldName: indexes
+    publicName: indexes
+    enhancer:
+      id: ''
+  persist_with_no_fields:
+    disabled: true
+    fieldName: persist_with_no_fields
+    publicName: persist_with_no_fields
+    enhancer:
+      id: ''
+  custom_storage:
+    disabled: true
+    fieldName: custom_storage
+    publicName: custom_storage
+    enhancer:
+      id: ''

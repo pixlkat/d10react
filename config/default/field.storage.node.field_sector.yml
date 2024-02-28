@@ -1,0 +1,60 @@
+uuid: 1d86ad0e-baa0-4579-9444-7750a2682050
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sector
+field_name: field_sector
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: parents
+      label: Parents
+    -
+      value: youth
+      label: Youth
+    -
+      value: business_community
+      label: 'Business Community'
+    -
+      value: civic_volunteer_groups
+      label: 'Civic/Volunteer Groups'
+    -
+      value: healthcare_professionals
+      label: 'Healthcare Professionals'
+    -
+      value: law_enforcement_agencies
+      label: 'Law Enforcement Agencies'
+    -
+      value: media
+      label: Media
+    -
+      value: religious_fraternal_organizations
+      label: 'Religious/Fraternal Organizations'
+    -
+      value: schools
+      label: Schools
+    -
+      value: state_local_and_or_tribal_organizations
+      label: 'State, local, and/or tribal organizations'
+    -
+      value: youth_serving_organizations
+      label: 'Youth-serving organizations'
+    -
+      value: other_organization_with_expertise_in_substance_abuse
+      label: 'Other Organization with Expertise in Substance Abuse'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

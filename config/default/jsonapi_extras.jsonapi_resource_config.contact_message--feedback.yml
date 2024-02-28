@@ -1,0 +1,65 @@
+uuid: cce96e97-4de4-41af-a34c-24951b66b5eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+id: contact_message--feedback
+disabled: true
+path: contact_message/feedback
+resourceType: contact_message--feedback
+resourceFields:
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  contact_form:
+    disabled: false
+    fieldName: contact_form
+    publicName: contact_form
+    enhancer:
+      id: ''
+  name:
+    disabled: false
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  mail:
+    disabled: false
+    fieldName: mail
+    publicName: mail
+    enhancer:
+      id: ''
+  subject:
+    disabled: false
+    fieldName: subject
+    publicName: subject
+    enhancer:
+      id: ''
+  message:
+    disabled: false
+    fieldName: message
+    publicName: message
+    enhancer:
+      id: ''
+  copy:
+    disabled: false
+    fieldName: copy
+    publicName: copy
+    enhancer:
+      id: ''
+  recipient:
+    disabled: false
+    fieldName: recipient
+    publicName: recipient
+    enhancer:
+      id: ''
