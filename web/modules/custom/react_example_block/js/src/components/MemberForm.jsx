@@ -29,31 +29,11 @@ const MemberForm = ({
   ];
 
   const sectorOptions = [
-    {value: 'parents', label: 'Parents'},
-    {value: 'youth', label: 'Youth'},
+    {value: 'arts_organizations', label: 'Arts Organizations'},
     {value: 'business_community', label: 'Business Community'},
     {value: 'civic_volunteer_groups', label: 'Civic/Volunteer Groups'},
-    {value: 'healthcare_professionals', label: 'Healthcare Professionals'},
-    {value: 'law_enforcement_agencies', label: 'Law Enforcement Agencies'},
+    {value: 'entertainment', label: 'Entertainment'},
     {value: 'media', label: 'Media'},
-    {
-      value: 'religious_fraternal_organizations',
-      label: 'Religious/Fraternal Organizations'
-    },
-    {value: 'schools', label: 'Schools'},
-    {
-      value: 'state_local_and_or_tribal_organizations',
-      label: 'State, Local, and/or Tribal Organizations'
-    },
-    {
-      value: 'youth_serving_organizations',
-      label: 'Youth-serving Organizations'
-    },
-    {
-      value: 'other_organization_with_expertise_in_substance_abuse',
-      label: 'Other Organization with Expertise in Substance Abuse'
-    },
-    {value: 'other', label: 'Other'},
   ];
 
   const defaultValues = {
