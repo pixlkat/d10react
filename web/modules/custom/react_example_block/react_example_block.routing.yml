@@ -1,0 +1,7 @@
+react_example_block.members:
+  path: '/roster-members'
+  defaults:
+    _title: 'Roster Members'
+    _controller: '\Drupal\react_example_block\Controller\MembersController'
+  requirements:
+    _permission: 'access content'

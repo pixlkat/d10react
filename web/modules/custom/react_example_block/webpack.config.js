@@ -2,9 +2,10 @@ const path = require('path');
 
 const config = {
   entry: {
-    main: ["./js/src/index.js"]
+    main: ["./js/src/index.jsx"]
   },
-  mode: 'production',
+  devtool: 'source-map',
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, "js/dist"),
     filename: '[name].min.js'
