@@ -16,9 +16,12 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/auto_entitylabel": "^3.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/jsonapi_extras": "^3.24",
+        "drupal/token": "^1.13",
         "drush/drush": "^12.4"
     },
     "conflict": {
