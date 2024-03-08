@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.member
     - node.type.page
     - taxonomy.vocabulary.tags
   module:
@@ -29,16 +30,21 @@ permissions:
   - 'access toolbar'
   - 'administer url aliases'
   - 'create article content'
+  - 'create member content'
   - 'create page content'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'delete any member content'
   - 'delete article revisions'
   - 'delete own article content'
   - 'delete own files'
+  - 'delete own member content'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'edit any member content'
   - 'edit own article content'
   - 'edit own comments'
+  - 'edit own member content'
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'

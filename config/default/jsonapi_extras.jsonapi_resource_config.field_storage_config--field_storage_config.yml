@@ -28,19 +28,19 @@ resourceFields:
     enhancer:
       id: ''
   dependencies:
-    disabled: false
+    disabled: true
     fieldName: dependencies
     publicName: dependencies
     enhancer:
       id: ''
   third_party_settings:
-    disabled: false
+    disabled: true
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
       id: ''
   _core:
-    disabled: false
+    disabled: true
     fieldName: _core
     publicName: _core
     enhancer:
