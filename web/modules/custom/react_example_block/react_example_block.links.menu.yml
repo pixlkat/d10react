@@ -1,0 +1,5 @@
+react_example_block:member_list:
+  title: 'Member List'
+  description: 'Member Listing React Example'
+  menu_name: main
+  route_name: react_example_block.members
