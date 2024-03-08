@@ -8,7 +8,8 @@ const MemberForm = ({
                       field_type,
                       field_status,
                       field_sector,
-                      onSuccess
+                      onSuccess,
+                      fieldConfig
                     }) => {
   const [isSubmitting, setSubmitting] = useState(false);
   const [result, setResult] = useState({
@@ -17,24 +18,12 @@ const MemberForm = ({
     message: '',
   });
 
-  // Hard code our options for the text list fields.
-  const typeOptions = [
-    {value: 'individual', label: 'Individual'},
-    {value: 'organization', label: 'Organization'},
-  ];
+  // Get our options from config
+  const typeOptions = fieldConfig['field_type']['options'];
 
-  const statusOptions = [
-    {value: 'active', label: 'Active Member'},
-    {value: 'inactive', label: 'Inactive Member'}
-  ];
+  const statusOptions = fieldConfig['field_status']['options'];
 
-  const sectorOptions = [
-    {value: 'arts_organizations', label: 'Arts Organizations'},
-    {value: 'business_community', label: 'Business Community'},
-    {value: 'civic_volunteer_groups', label: 'Civic/Volunteer Groups'},
-    {value: 'entertainment', label: 'Entertainment'},
-    {value: 'media', label: 'Media'},
-  ];
+  const sectorOptions = fieldConfig['field_sector']['options'];
 
   const defaultValues = {
     field_first_name: field_first_name ?? '',
@@ -133,10 +122,10 @@ const MemberForm = ({
   return (
     <div>
       {(result.success || result.error) &&
-      <div>
-        <h2>{(result.success ? 'Success!' : 'Error')}</h2>
-        {result.message}
-      </div>
+        <div>
+          <h2>{(result.success ? 'Success!' : 'Error')}</h2>
+          {result.message}
+        </div>
       }
       <form onSubmit={handleSubmit}>
         <div>
@@ -176,7 +165,7 @@ const MemberForm = ({
                     onChange={handleInputChange}>
               <option value="">-- Select --</option>
               {typeOptions.map(option => <option key={option.value}
-                    value={option.value}>{option.label}</option>)}
+                                                 value={option.value}>{option.label}</option>)}
             </select>
           </label>
         </div>
@@ -188,7 +177,7 @@ const MemberForm = ({
               <option value="">-- Select --</option>
 
               {statusOptions.map(option => <option key={option.value}
-                      value={option.value}>{option.label}</option>)}
+                                                   value={option.value}>{option.label}</option>)}
             </select>
           </label>
         </div>

@@ -1,7 +1,4 @@
 export const contentReducer = (state, action) => {
-  console.log('IN REDUCER');
-  console.log(state);
-  console.log(action);
   let {list} = state;
   let idx;
   switch (action.type) {
@@ -11,6 +8,20 @@ export const contentReducer = (state, action) => {
         showEditForm: false
       }));
       return {...state, list: data};
+
+    case 'initialize_config':
+      const fieldArr = action.data.map(item => {
+        const fieldObj = {};
+        fieldObj[item.attributes.field_name] = {
+          allowed_values: item.attributes.settings.allowed_values,
+          options: Object.entries(item.attributes.settings.allowed_values).map((entry) => {
+            return {value: entry[0], label: entry[1]};
+          }),
+        };
+        return fieldObj;
+      });
+      const fields = Object.assign({}, ...fieldArr);
+      return { ...state, fieldConfig: fields };
 
     case 'add':
       // Add a new item to the content list.
@@ -30,6 +41,9 @@ export const contentReducer = (state, action) => {
 
     case 'show_add_form':
       return {...state, showNodeAdd: true};
+
+    case 'cancel_add_form':
+      return {...state, showNodeAdd: false};
 
     case 'edit_item':
       list = list.map((item) => (item.id === action.data ? {

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import MemberRosterReadWrite from "./components/MemberRosterReadWrite";
 
-
 const Main = () => (
   <MemberRosterReadWrite />
 );

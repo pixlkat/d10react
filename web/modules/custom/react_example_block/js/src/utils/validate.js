@@ -5,7 +5,6 @@ export const isValidData = (data) => {
   if (data.data === undefined || data.data === null || data.data.length === 0) {
     return false;
   }
-  console.log('data is valid');
   return true;
 }
 
