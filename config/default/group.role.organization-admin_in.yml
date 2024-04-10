@@ -1,0 +1,15 @@
+uuid: 3fea28d2-ccff-4b24-8987-d837ab6b8e14
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+    - user.role.administrator
+id: organization-admin_in
+label: Administrator
+weight: 102
+admin: true
+scope: insider
+global_role: administrator
+group_type: organization
+permissions: {  }

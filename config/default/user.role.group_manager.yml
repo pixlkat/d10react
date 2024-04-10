@@ -1,0 +1,20 @@
+uuid: 894de589-9cb7-4d45-a1a3-8908c3ad8c40
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - react_example_block
+    - system
+    - toolbar
+id: group_manager
+label: 'Group Manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access group overview'
+  - 'access toolbar'
+  - 'create organization group'
+  - 'read member field info'
+  - 'view the administration theme'

@@ -1,0 +1,15 @@
+uuid: 3329d1a9-9228-4c6a-ade5-20ab73f3d902
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+    - user.role.authenticated
+id: organization-outsider
+label: Outsider
+weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: organization
+permissions: {  }

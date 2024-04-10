@@ -1,0 +1,15 @@
+uuid: c7b0e3de-1ff2-4044-97a7-c0e9ffd60f60
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+    - user.role.anonymous
+id: organization-anonymous
+label: Anonymous
+weight: -102
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: organization
+permissions: {  }

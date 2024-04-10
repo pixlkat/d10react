@@ -13,6 +13,7 @@ dependencies:
     - file
     - node
     - path
+    - react_example_block
     - system
     - taxonomy
     - toolbar
@@ -47,6 +48,7 @@ permissions:
   - 'edit own member content'
   - 'edit own page content'
   - 'edit terms in tags'
+  - 'read member field info'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'

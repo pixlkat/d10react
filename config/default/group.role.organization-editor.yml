@@ -1,0 +1,20 @@
+uuid: 1021127c-9ebd-46d0-9b1b-0feb0ca88b4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+id: organization-editor
+label: Editor
+weight: 104
+admin: false
+scope: individual
+global_role: null
+group_type: organization
+permissions:
+  - 'create group_node:member entity'
+  - 'delete any group_node:member entity'
+  - 'update any group_node:member entity'
+  - 'view group'
+  - 'view group_node:member entity'
+  - 'view unpublished group_node:member entity'

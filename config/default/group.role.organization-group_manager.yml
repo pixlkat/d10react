@@ -1,0 +1,15 @@
+uuid: 264e5a68-8878-4a76-8f4a-df736b6ffd4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+    - user.role.group_manager
+id: organization-group_manager
+label: 'Group Manager'
+weight: 103
+admin: true
+scope: insider
+global_role: group_manager
+group_type: organization
+permissions: {  }

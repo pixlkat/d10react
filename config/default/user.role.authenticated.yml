@@ -9,6 +9,7 @@ dependencies:
     - contact
     - file
     - filter
+    - react_example_block
     - search
     - system
 _core:
@@ -23,6 +24,7 @@ permissions:
   - 'access site-wide contact form'
   - 'delete own files'
   - 'post comments'
+  - 'read member field info'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'

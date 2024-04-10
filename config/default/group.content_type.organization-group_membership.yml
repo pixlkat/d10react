@@ -1,0 +1,15 @@
+uuid: e47ee49b-0110-4463-b231-9af217e6ea01
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.organization
+  module:
+    - user
+id: organization-group_membership
+group_type: organization
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

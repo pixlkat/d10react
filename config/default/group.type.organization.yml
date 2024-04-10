@@ -1,0 +1,11 @@
+uuid: 7167632b-d052-41b8-b67f-26dde149375a
+langcode: en
+status: true
+dependencies: {  }
+id: organization
+label: Organization
+description: ''
+new_revision: true
+creator_membership: true
+creator_wizard: false
+creator_roles: {  }
