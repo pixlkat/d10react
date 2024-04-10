@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  admin_toolbar: 0
   announcements_feed: 0
   auto_entitylabel: 0
   automated_cron: 0
@@ -17,10 +18,14 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  flexible_permissions: 0
+  gnode: 0
+  group: 0
   help: 0
   history: 0
   image: 0
@@ -45,6 +50,7 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  variationcache: 0
   views_ui: 0
   views: 10
   minimal: 1000
