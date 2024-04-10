@@ -1,0 +1,46 @@
+<?php declare(strict_types = 1);
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\group\Entity\Group;
+use Drupal\group\Entity\GroupInterface;
+use Drupal\group\Entity\GroupMembership;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_user_login().
+ */
+function react_example_block_user_login(UserInterface $account) {
+  // When a user logs in, if they have a group membership, grab the first one
+  // and add it to heir tempstore so we can use it when they add a new member
+  // node via the raect app. 
+  $memberships = GroupMembership::loadByUser($account);
+  $my_groups = [];
+  foreach ($memberships as $membership) {
+    $group = $membership->getGroup();
+    if ($group instanceof GroupInterface) {
+      $my_groups[] = $group;
+    }
+  }
+  if (!empty($my_groups)) {
+    /** @var GroupInterface $default */
+    $default = reset($my_groups);
+    $tempstore = \Drupal::service('tempstore.private')->get('react_example_block_user');
+    $tempstore->set('default_group', $default->id());
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function react_example_block_node_insert(EntityInterface $entity) {
+  if ($entity->bundle() == 'member') {
+    // If the user has a group stored in the user's tempstore, add the new
+    // member node to it.
+    $tempstore = \Drupal::service('tempstore.private')->get('react_example_block_user');
+    $default_gid = $tempstore->get('default_group');
+    if ($default_gid) {
+      $group = Group::load($default_gid);
+      $group->addRelationship($entity, 'group_node:member');
+    }
+  }
+}
