@@ -16,10 +16,13 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.4",
         "drupal/auto_entitylabel": "^3.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/group": "^2",
         "drupal/jsonapi_extras": "^3.24",
         "drupal/token": "^1.13",
         "drush/drush": "^12.4"
@@ -36,7 +39,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -44,6 +48,12 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "patches": {
+            "drupal/group": {
+                "3364226: Form error when no group admin role is automatically created": "patches/1d12bada0c146b8f31fb74fdb51cc6df6bfea5aa.patch",
+                "Drupal 10.1: Revisions tab appears twice on Groups": "https://www.drupal.org/files/issues/2023-10-26/duplicate-revisions-tabs-3397063-2-%5BDrupal10.1Only%5D.patch"
             }
         },
         "installer-paths": {

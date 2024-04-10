@@ -1,0 +1,26 @@
+From 1d12bada0c146b8f31fb74fdb51cc6df6bfea5aa Mon Sep 17 00:00:00 2001
+From: Kristiaan Van den Eynde <magentix@gmail.com>
+Date: Wed, 20 Dec 2023 16:09:09 +0100
+Subject: [PATCH] Issue #3364226 by gwvoigt, kristiaanvandeneynde, chOP: Form
+ error when no group admin role is automatically created
+
+---
+ src/Entity/Form/GroupTypeForm.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Entity/Form/GroupTypeForm.php b/src/Entity/Form/GroupTypeForm.php
+index a55ce3d6..b951f4c3 100644
+--- a/src/Entity/Form/GroupTypeForm.php
++++ b/src/Entity/Form/GroupTypeForm.php
+@@ -238,7 +238,7 @@ class GroupTypeForm extends BundleEntityFormBase {
+         $add_role_url = Url::fromRoute('entity.group_role.add_form', ['group_type' => $type->id()]);
+         $t_args = ['@url' => $add_role_url->toString()];
+         $description = $this->t('You do not have any custom group roles yet, <a href="@url">create one here</a>.', $t_args);
+-        $form['creator_roles']['#description'] .= "<br /><em>$description</em>";
++        $form['access_settings']['creator_roles']['#description'] .= "<br /><em>$description</em>";
+       }
+     }
+ 
+-- 
+GitLab
+
