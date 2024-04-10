@@ -12,16 +12,24 @@ export const contentReducer = (state, action) => {
     case 'initialize_config':
       const fieldArr = action.data.map(item => {
         const fieldObj = {};
-        fieldObj[item.attributes.field_name] = {
-          allowed_values: item.attributes.settings.allowed_values,
-          options: Object.entries(item.attributes.settings.allowed_values).map((entry) => {
-            return {value: entry[0], label: entry[1]};
-          }),
+        fieldObj[item.name] = {
+          label: item.attributes.label,
+          type: item.attributes.type,
+          isRequired: ('NotNull' in item.attributes.constraints),
         };
+        if (item.attributes.type === 'list_string') {
+          fieldObj[item.name]['settings'] = { allowed_values:  item.attributes.settings.allowed_values};
+          fieldObj[item.name]['settings']['options'] = Object.entries(item.attributes.settings.allowed_values).map((entry) => {
+            return {value: entry[0], label: entry[1]};
+          });
+        }
+        else {
+          fieldObj[item.name]['settings'] = item.attributes.settings;
+        }
         return fieldObj;
       });
       const fields = Object.assign({}, ...fieldArr);
-      return { ...state, fieldConfig: fields };
+      return {...state, fieldConfig: fields};
 
     case 'add':
       // Add a new item to the content list.

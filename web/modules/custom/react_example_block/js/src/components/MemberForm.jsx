@@ -19,11 +19,11 @@ const MemberForm = ({
   });
 
   // Get our options from config
-  const typeOptions = fieldConfig['field_type']['options'];
+  const typeOptions = fieldConfig['field_type']['settings']['options'];
 
-  const statusOptions = fieldConfig['field_status']['options'];
+  const statusOptions = fieldConfig['field_status']['settings']['options'];
 
-  const sectorOptions = fieldConfig['field_sector']['options'];
+  const sectorOptions = fieldConfig['field_sector']['settings']['options'];
 
   const defaultValues = {
     field_first_name: field_first_name ?? '',

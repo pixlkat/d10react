@@ -40,9 +40,9 @@ const MemberItem = ({
     );
   }
 
-  const statusLabel = fieldConfig['field_status']['allowed_values'][`${field_status}`];
-  const typeLabel = fieldConfig['field_type']['allowed_values'][`${field_type}`];
-  const sectorLabel = fieldConfig['field_sector']['allowed_values'][`${field_sector}`];
+  const statusLabel = fieldConfig['field_status']['settings']['allowed_values'][`${field_status}`];
+  const typeLabel = fieldConfig['field_type']['settings']['allowed_values'][`${field_type}`];
+  const sectorLabel = fieldConfig['field_sector']['settings']['allowed_values'][`${field_sector}`];
   return (
     <div>
       <hr/>

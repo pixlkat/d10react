@@ -22,24 +22,7 @@ const MemberRosterReadWrite = () => {
     // applications embedded in a Drupal theme or module this could also be set
     // to a relative path.
     const API_ROOT = '/jsonapi/';
-    const url = `${API_ROOT}members`;
-
-    const headers = new Headers({
-      Accept: 'application/vnd.api+json',
-    });
-
-    fetch(url, {headers})
-      .then((response) => response.json())
-      .then((data) => {
-        if (isValidData(data)) {
-          dispatchContentAction({ type: 'initialize', data: data.data });
-        }
-      })
-      .catch(err => console.log('There was an error accessing the API', err));
-
-    // Grab the field configs, requires authentication.
     const csrfUrl = `/session/token?_format=json`;
-    const fetchUrl = '/jsonapi/field_storage_config/field_storage_config?filter[field_name-filter][condition][path]=field_name&filter[field_name-filter][condition][operator]=IN&filter[field_name-filter][condition][value][]=field_sector&filter[field_name-filter][condition][value][]=field_type&filter[field_name-filter][condition][value][]=field_status';
     const fetchOptions = {
       method: 'GET',
       credentials: 'same-origin',
@@ -50,9 +33,24 @@ const MemberRosterReadWrite = () => {
       }),
     };
 
+    const url = `${API_ROOT}members`;
+
     fetchWithCSRFToken(csrfUrl, fetchUrl, fetchOptions)
       .then((response) => response.json())
       .then((data) => {
+        if (isValidData(data)) {
+          dispatchContentAction({ type: 'initialize', data: data.data });
+        }
+      })
+      .catch(err => console.log('There was an error accessing the API', err));
+
+    // Grab the field configs, requires authentication.
+    const fetchUrl = '/api/member-field-config';
+
+    fetchWithCSRFToken(csrfUrl, fetchUrl, fetchOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('INIT CONFIG', data);
         if (isValidData(data)) {
           dispatchContentAction({ type: 'initialize_config', data: data.data });
         }
