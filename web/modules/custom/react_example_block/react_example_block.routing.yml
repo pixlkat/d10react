@@ -5,3 +5,13 @@ react_example_block.members:
     _controller: '\Drupal\react_example_block\Controller\MembersController'
   requirements:
     _permission: 'access content'
+
+react_example_block.field_config_jason_api:
+  path: '/api/member-field-config'
+  defaults:
+    _title: 'Field Config Jason Api'
+    _controller: '\Drupal\react_example_block\Controller\FieldConfigJasonApiController'
+  methods:
+    - GET
+  requirements:
+    _permission: 'read member field info'
