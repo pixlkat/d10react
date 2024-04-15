@@ -43,3 +43,13 @@ function react_example_block_node_insert(EntityInterface $entity) {
     }
   }
 }
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function react_example_block_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['member'])) {
+    // phpcs:ignore Drupal.Classes.FullyQualifiedNamespace.UseStatementMissing
+    $bundles['node']['member']['class'] = \Drupal\react_example_block\Entity\Node\Member::class;
+  }
+}
