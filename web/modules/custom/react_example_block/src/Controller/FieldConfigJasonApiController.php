@@ -39,7 +39,7 @@ final class FieldConfigJasonApiController extends ControllerBase {
 
     $field_definitions = $this->entityFieldManager->getFieldDefinitions('node', 'member');
     foreach ($field_definitions as $name => $definition) {
-      $cache_dependencies[] = $definition->getConfig('roster_member');
+      $cache_dependencies[] = $definition->getConfig('member');
       if (str_starts_with($name, 'field_')) {
         $field = [
           'name' => $name,

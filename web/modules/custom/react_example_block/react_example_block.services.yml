@@ -1,0 +1,11 @@
+services:
+  access_check.react_example_block.group_jsonapi:
+    class: Drupal\react_example_block\Access\GroupJsonapiAccessChecker
+    arguments: ['@current_user', '@tempstore.private']
+    tags:
+      - { name: access_check, applies_to: _group_jsonapi }
+
+  react_example_block.route_subscriber:
+    class: Drupal\react_example_block\Routing\ReactExampleRouteSubscriber
+    tags:
+      - { name: event_subscriber }
