@@ -12,7 +12,7 @@ use Drupal\user\UserInterface;
 function react_example_block_user_login(UserInterface $account) {
   // When a user logs in, if they have a group membership, grab the first one
   // and add it to heir tempstore so we can use it when they add a new member
-  // node via the raect app. 
+  // node via the raect app.
   $memberships = GroupMembership::loadByUser($account);
   $my_groups = [];
   foreach ($memberships as $membership) {
@@ -25,7 +25,7 @@ function react_example_block_user_login(UserInterface $account) {
     /** @var GroupInterface $default */
     $default = reset($my_groups);
     $tempstore = \Drupal::service('tempstore.private')->get('react_example_block_user');
-    $tempstore->set('default_group', $default->id());
+    $tempstore->set('default_group', $default);
   }
 }
 
@@ -37,9 +37,8 @@ function react_example_block_node_insert(EntityInterface $entity) {
     // If the user has a group stored in the user's tempstore, add the new
     // member node to it.
     $tempstore = \Drupal::service('tempstore.private')->get('react_example_block_user');
-    $default_gid = $tempstore->get('default_group');
-    if ($default_gid) {
-      $group = Group::load($default_gid);
+    $group = $tempstore->get('default_group');
+    if ($group instanceof GroupInterface) {
       $group->addRelationship($entity, 'group_node:member');
     }
   }
