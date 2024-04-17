@@ -86,7 +86,9 @@ resourceFields:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'm/d/Y g:i A (T)'
   promote:
     disabled: true
     fieldName: promote
@@ -146,16 +148,16 @@ resourceFields:
     fieldName: field_sector
     publicName: field_sector
     enhancer:
-      id: ''
+      id: list
   field_status:
     disabled: false
     fieldName: field_status
     publicName: field_status
     enhancer:
-      id: ''
+      id: list
   field_type:
     disabled: false
     fieldName: field_type
     publicName: field_type
     enhancer:
-      id: ''
+      id: list
