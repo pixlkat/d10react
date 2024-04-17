@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  add_content_by_bundle: 0
   admin_toolbar: 0
   announcements_feed: 0
   auto_entitylabel: 0
@@ -24,6 +25,7 @@ module:
   file: 0
   filter: 0
   flexible_permissions: 0
+  fullcalendar_view: 0
   gnode: 0
   group: 0
   help: 0
@@ -43,6 +45,9 @@ module:
   react_example_block: 0
   search: 0
   serialization: 0
+  smart_date: 0
+  smart_date_calendar_kit: 0
+  smart_date_starter_kit: 0
   system: 0
   taxonomy: 0
   text: 0

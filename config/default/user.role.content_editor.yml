@@ -9,14 +9,10 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - comment
-    - contextual
     - file
     - node
-    - path
     - react_example_block
-    - system
     - taxonomy
-    - toolbar
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
 id: content_editor
@@ -24,32 +20,20 @@ label: 'Content editor'
 weight: 2
 is_admin: false
 permissions:
-  - 'access administration pages'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access files overview'
-  - 'access toolbar'
-  - 'administer url aliases'
   - 'create article content'
-  - 'create member content'
   - 'create page content'
   - 'create terms in tags'
-  - 'create url aliases'
-  - 'delete any member content'
   - 'delete article revisions'
   - 'delete own article content'
   - 'delete own files'
-  - 'delete own member content'
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit any member content'
   - 'edit own article content'
   - 'edit own comments'
-  - 'edit own member content'
   - 'edit own page content'
   - 'edit terms in tags'
   - 'read member field info'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'
-  - 'view the administration theme'
