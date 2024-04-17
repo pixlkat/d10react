@@ -24,6 +24,7 @@
         "drupal/core-recommended": "^10.2",
         "drupal/group": "^2",
         "drupal/jsonapi_extras": "^3.24",
+        "drupal/smart_date_calendar_kit": "^2.1",
         "drupal/token": "^1.13",
         "drush/drush": "^12.4"
     },
