@@ -62,8 +62,8 @@ final class GroupJsonapiAccessChecker implements AccessInterface {
         $result = AccessResult::allowedIf($group->hasPermission($permission, $account));
         break;
 
-      case 'jsonapi.node--member.collection.individual.patch':
-      case 'jsonapi.node--member.collection.individual.delete':
+      case 'jsonapi.node--member.individual.patch':
+      case 'jsonapi.node--member.individual.delete':
         $operation = str_contains($routeName, 'patch') ? 'update' : 'delete';
         $permission =  $operation . ' any group_node:member entity';
         /** @var \Drupal\react_example_block\Entity\Node\Member $member */
