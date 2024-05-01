@@ -1,0 +1,79 @@
+From a916027fa3ccf10c6fadca0a7d35218bda2b4833 Mon Sep 17 00:00:00 2001
+From: Tancredi D'Onofrio <40872-tanc@users.noreply.drupalcode.org>
+Date: Mon, 5 Feb 2024 19:15:53 +0000
+Subject: [PATCH] Add devDependencies option to load helper scripts
+
+---
+ src/AssetLibrary.php |  7 +++++++
+ src/Vite.php         | 29 +++++++++++++++++++++++++++++
+ 2 files changed, 36 insertions(+)
+
+diff --git a/src/AssetLibrary.php b/src/AssetLibrary.php
+index 63cb8a8..4b5c316 100644
+--- a/src/AssetLibrary.php
++++ b/src/AssetLibrary.php
+@@ -161,6 +161,13 @@ class AssetLibrary {
+     return $enabledInSettings || $enabledInLibraryDefinition;
+   }
+ 
++  /**
++   * Returns dev dependencies.
++   */
++  public function getDevDependencies(): array {
++    return $this->library['vite']['devDependencies'] ?? [];
++  }
++
+   /**
+    * Determines if vite dev server or dist build should serve library assets.
+    */
+diff --git a/src/Vite.php b/src/Vite.php
+index 4cb6560..cbd6945 100644
+--- a/src/Vite.php
++++ b/src/Vite.php
+@@ -67,6 +67,31 @@ class Vite {
+         continue;
+       }
+       $libraries[$libraryId] = $this->rewriteLibrary($assetLibrary);
++      if ($assetLibrary->shouldUseDevServer()) {
++        $this->rewriteDevDependencies($libraries, $assetLibrary);
++      }
++    }
++  }
++
++  /**
++   * Rewrite the dev dependencies for the given asset library entry.
++   *
++   * @param array $libraries
++   *   The array of libraries to modify.
++   * @param AssetLibrary $assetLibrary
++   *   The asset library to retrieve dev dependencies and base URL from.
++   */
++  private function rewriteDevDependencies(array &$libraries, AssetLibrary $assetLibrary): void {
++    foreach ($assetLibrary->getDevDependencies() as $fullDependency) {
++      // Split the dependency name on slash to remove the module part.
++      $dependencyParts = explode('/', $fullDependency);
++      $dependency = end($dependencyParts);
++      if (isset($libraries[$dependency])) {
++        // Modify the library to add an attribute.
++        foreach ($libraries[$dependency]['js'] as $path => $options) {
++          $libraries[$dependency]['js'][$path]['attributes']['data-vite-dev-server'] = $assetLibrary->getDevServerBaseUrl();
++        }
++      }
+     }
+   }
+ 
+@@ -197,7 +222,11 @@ class Vite {
+         $options['attributes'] = $attributes;
+         $newPath = $devServerBaseUrl . '/' . $path;
+         $library['js'][$newPath] = $options;
++        if (!empty($assetLibrary->getDevDependencies())) {
++          $library['dependencies'] = array_merge($library['dependencies'], $assetLibrary->getDevDependencies());
++        }
+       }
++
+     }
+     return $library;
+   }
+-- 
+GitLab
+

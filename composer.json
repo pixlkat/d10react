@@ -26,6 +26,7 @@
         "drupal/jsonapi_extras": "^3.24",
         "drupal/smart_date_calendar_kit": "^2.1",
         "drupal/token": "^1.13",
+        "drupal/vite": "^1.1",
         "drush/drush": "^12.4"
     },
     "conflict": {
@@ -55,6 +56,9 @@
             "drupal/group": {
                 "3364226: Form error when no group admin role is automatically created": "patches/1d12bada0c146b8f31fb74fdb51cc6df6bfea5aa.patch",
                 "Drupal 10.1: Revisions tab appears twice on Groups": "https://www.drupal.org/files/issues/2023-10-26/duplicate-revisions-tabs-3397063-2-%5BDrupal10.1Only%5D.patch"
+            },
+            "drupal/vite": {
+                "3392517: Support @vitejs/plugin-react": "patches/vite-3392517-mr8.patch"
             }
         },
         "installer-paths": {
