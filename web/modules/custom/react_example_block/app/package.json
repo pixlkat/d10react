@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sample React app in module",
   "main": "src/index.jsx",
+  "type": "module",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "build:dev": "webpack",
