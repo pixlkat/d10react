@@ -14,7 +14,7 @@ final class Member extends Node {
   public function getGroup(): ?GroupInterface {
     $group_relationship_entities = GroupRelationship::loadByEntity($this);
 
-    return ($group_relationship_entities) ? reset($group_relationship_entities) : NULL;
+    return ($group_relationship_entities) ? reset($group_relationship_entities)->getGroup() : NULL;
   }
 
 }
