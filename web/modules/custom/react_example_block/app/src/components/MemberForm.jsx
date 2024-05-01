@@ -28,9 +28,9 @@ const MemberForm = ({
   const defaultValues = {
     field_first_name: field_first_name ?? '',
     field_last_name: field_last_name ?? '',
-    field_type: field_type ?? '',
-    field_status: field_status ?? '',
-    field_sector: field_sector ?? '',
+    field_type: field_type.value ?? '',
+    field_status: field_status.value ?? '',
+    field_sector: field_sector.value ?? '',
   };
 
   const [values, setValues] = useState(defaultValues);

@@ -35,7 +35,7 @@ const MemberRosterReadWrite = () => {
 
     const url = `${API_ROOT}members`;
 
-    fetchWithCSRFToken(csrfUrl, fetchUrl, fetchOptions)
+    fetchWithCSRFToken(csrfUrl, url, fetchOptions)
       .then((response) => response.json())
       .then((data) => {
         if (isValidData(data)) {
@@ -63,10 +63,10 @@ const MemberRosterReadWrite = () => {
   return (
     <div>
       <h2>Member Roster</h2>
-      {content.list.length ? (
+      {content.list.length && Object.keys(content.fieldConfig).length ? (
         <div>
           {
-            content.list.map((item) => <MemberItem key={item.id} id={item.id} dispatchContentAction={dispatchContentAction} showEditForm={item.showEditForm} fieldConfig={content.fieldConfig} {...item.attributes} />)
+            content.list.map((item) => <MemberItem key={item.id} id={item.id} member={item} dispatchContentAction={dispatchContentAction} showEditForm={item.showEditForm} fieldConfig={content.fieldConfig}  />)
           }
         </div>
        ) : (

@@ -5,14 +5,7 @@ import MemberDelete from "./MemberDelete";
 
 const MemberItem = ({
                       id,
-                      drupal_internal__nid,
-                      title,
-                      field_first_name,
-                      field_last_name,
-                      field_type,
-                      field_status,
-                      field_sector,
-                      changed,
+                      member,
                       showEditForm,
                       dispatchContentAction,
                       fieldConfig
@@ -27,11 +20,11 @@ const MemberItem = ({
         <hr/>
         <MemberEdit
           id={id}
-          field_first_name={field_first_name}
-          field_last_name={field_last_name}
-          field_type={field_type}
-          field_status={field_status}
-          field_sector={field_sector}
+          field_first_name={member.attributes.field_first_name}
+          field_last_name={member.attributes.field_last_name}
+          field_type={member.attributes.field_type}
+          field_status={member.attributes.field_status}
+          field_sector={member.attributes.field_sector}
           onSuccess={data => dispatchContentAction({type: 'update', data})}
           fieldConfig={fieldConfig}
         />
@@ -40,23 +33,20 @@ const MemberItem = ({
     );
   }
 
-  const statusLabel = fieldConfig['field_status']['settings']['allowed_values'][`${field_status}`];
-  const typeLabel = fieldConfig['field_type']['settings']['allowed_values'][`${field_type}`];
-  const sectorLabel = fieldConfig['field_sector']['settings']['allowed_values'][`${field_sector}`];
   return (
     <div>
       <hr/>
-      <div>Name: {field_first_name} {field_last_name}</div>
-      <div>Status: {statusLabel}</div>
-      <div>Type: {typeLabel}</div>
-      <div>Sector: {sectorLabel}</div>
-      <div>Last Updated: {changed}</div>
+      <div>Name: {member.attributes.field_first_name} {member.attributes.field_last_name}</div>
+      <div>Status: {member.attributes.field_status.label}</div>
+      <div>Type: {member.attributes.field_type.label}</div>
+      <div>Sector: {member.attributes.field_sector.label}</div>
+      <div>Last Updated: {member.attributes.changed}</div>
       <div>
         <button onClick={(e) => handleClick(id, 'edit_item')}>edit</button>
         &nbsp;
         <MemberDelete
           id={id}
-          title={title}
+          title={member.attributes.title}
           onSuccess={id => dispatchContentAction({type: 'delete', data: id})}
         />
       </div>

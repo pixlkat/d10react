@@ -2,12 +2,12 @@ const path = require('path');
 
 const config = {
   entry: {
-    main: ["./js/src/index.jsx"]
+    main: ["./src/index.jsx"]
   },
   devtool: 'source-map',
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, "js/dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: '[name].min.js'
   },
   resolve: {
@@ -19,7 +19,7 @@ const config = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        include: path.join(__dirname, 'js/src'),
+        include: path.join(__dirname, 'src'),
       }
     ]
   }

@@ -1,5 +1,14 @@
+react_app.devmode:
+  js:
+    js/viteDevMode.js: {}
+
 react_app:
   version: 1.0
-  footer: true
+  vite:
+    manifest: app/dist/.vite/manifest.json
+    baseUrl: '/modules/custom/react_example_block/app/dist/'
+    devServerUrl: 'https://d10react.ddev.site:5173/modules/custom/react_example_block/app'
+    devDependencies:
+      - react_example_block/react_app.devmode
   js:
-    js/dist/main.min.js: {minified: true}
+    src/index.jsx: {}
